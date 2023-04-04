@@ -6,4 +6,5 @@
 Created by Elliott Ullman
 
 ## History
-- **04-04-20231** : **LOG** **000** : Project started. Using Angular + ELectron, RxJS needed.
+### LOG 0:
+- **04-04-2023** : Project started. Using Angular + ELectron, RxJS needed.

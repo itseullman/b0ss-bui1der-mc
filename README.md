@@ -4,3 +4,6 @@
 ### An application to streamline the creation of Minecraft 'b0ss batt1es' bundles.
 
 Created by Elliott Ullman
+
+## History
+- **04-04-20231** : **LOG** **000** : Project started. Using Angular + ELectron, RxJS needed.

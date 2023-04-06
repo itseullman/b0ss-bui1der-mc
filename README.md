@@ -5,6 +5,11 @@
 
 Created by Elliott Ullman
 
+## Local Setup
+- Clone repo locally.
+- Within project directory, run `npm install`.
+- Then run `npm run electron` to start the application.
+
 ## History
 ### LOG 0:
 - **04-04-2023** : Project started. Using Angular + ELectron, RxJS needed.

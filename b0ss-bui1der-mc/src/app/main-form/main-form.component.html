@@ -1,0 +1,21 @@
+<div class="container">
+    <main>
+        <form [formGroup]="formMain" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="bossname">Boss Name</label>
+                <input type="text" class="form-control" id="bossname" formControlName="bossname">
+                <span *ngIf="formMain.controls['bossname'].errors && !formMain.controls['bossname'].pristine">
+                    Invalid
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="bosscommand">Boss Summon Command</label>
+                <input type="text" class="form-control" id="bosscommand" formControlName="bosscommand">
+                <span *ngIf="formMain.controls['bosscommand'].errors && !formMain.controls['bosscommand'].pristine">
+                    Invalid
+                </span>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="!formMain.valid">Submit</button>
+        </form>
+    </main>
+</div>

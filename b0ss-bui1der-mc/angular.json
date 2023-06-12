@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "b0b1",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,8 +25,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/fonts.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",

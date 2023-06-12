@@ -1,0 +1,19 @@
+@font-face {
+    font-family: mk-pixel-project;
+    src: url(assets/fonts/MKPixelProject.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: minercraftory;
+    src: url(assets/fonts/Minercraftory.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: karma-future;
+    src: url(assets/fonts/KarmaFuture.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: vcr-osd-mono;
+    src: url(assets/fonts/VCR_OSD_MONO.ttf) format("truetype");
+}

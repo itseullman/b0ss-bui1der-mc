@@ -1,0 +1,55 @@
+<!-- interpolation -->
+<p>boss-mob works! {{bossname}}</p>
+
+<!-- property binding -->
+<div [hidden]="hideMinions" [innerText]="minionCount"></div>
+
+<!-- event binding -->
+<button (click)="toggle()">Toggle</button>
+
+<!-- if directive -->
+<div *ngIf="minionCount > 0">
+    Minion List:
+</div>
+
+<!-- optional chaining/null coalescing -->
+<!-- {{object?.property > 0}} -->
+<!-- {{minionCount ?? 'd'}} -->
+
+
+<!-- for directive/table * = structural -->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Max Spawn Count</th>
+    </tr>
+    <tr *ngFor="let min of minions; let e=even; let o=odd; let i=index" [ngClass]="e ? 'even' : 'odd'">
+        <td>{{min.name}}</td>
+        <td>{{min.maxCount}}</td>
+        <!-- Pipes (displaying data) -->
+        <td>{{min.createdDate | date : 'long'}}</td>
+    </tr>
+</table>
+
+<!-- switch directive -->
+<div [ngSwitch]="minionCount">
+    <div *ngSwitch="1">
+        1 Minion
+    </div>
+    <div *ngSwitch="0">
+        No minions
+    </div>
+    <div *ngSwitchDefault>
+        More than 1 minion
+    </div>
+</div>
+
+<!-- json pipe (for debugging) -->
+{{minions | json}}
+
+<!-- use component communication/pass data -->
+<b0b1-minion-list [minions]="minions" (minionSelected)="selectMinion($event)"></b0b1-minion-list>
+
+<div>
+    <button (click)="addMinion()">Add Minion</button>
+</div>

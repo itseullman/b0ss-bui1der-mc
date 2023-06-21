@@ -5,20 +5,28 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NgTestComponent } from './ng-test/ng-test.component';
-import { MinionListComponent } from './ng-test/minion-list/minion-list.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OverviewComponent } from './overview/overview.component';
+import { MobComponent } from './mob/mob.component';
+import { MinionsComponent } from './minions/minions.component';
+import { MinionComponent } from './minion/minion.component';
+import { ArenaComponent } from './arena/arena.component';
+import { ExportComponent } from './export/export.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NgTestComponent,
-    MinionListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    OverviewComponent,
+    MobComponent,
+    MinionsComponent,
+    MinionComponent,
+    ArenaComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule,

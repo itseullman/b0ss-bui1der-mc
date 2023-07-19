@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +14,7 @@ import { MinionsComponent } from './minions/minions.component';
 import { MinionComponent } from './minion/minion.component';
 import { ArenaComponent } from './arena/arena.component';
 import { ExportComponent } from './export/export.component';
+import { DetailsComponent } from './overview/details/details.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,15 @@ import { ExportComponent } from './export/export.component';
     MinionsComponent,
     MinionComponent,
     ArenaComponent,
-    ExportComponent
+    ExportComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

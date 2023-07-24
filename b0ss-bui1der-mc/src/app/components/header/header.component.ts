@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'b0b1-header',
@@ -6,19 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  static title: string = '';
-  static subtitle: string = '';
-  static backUrl: string = '';
 
-  getTitle(): string {
-    return HeaderComponent.title;
-  }
-
-  getSubtitle(): string {
-    return HeaderComponent.subtitle;
-  }
-
-  getBackUrl(): string {
-    return HeaderComponent.backUrl;
-  }
+  constructor(public headerSvc: HeaderService) {}
+  
 }

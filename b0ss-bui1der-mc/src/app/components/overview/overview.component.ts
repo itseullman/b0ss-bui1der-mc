@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, Input} from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'b0b1-overview',
@@ -8,14 +8,16 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class OverviewComponent implements AfterViewChecked {
 
+  constructor(private headerSvc: HeaderService) {}
+
   ngAfterViewChecked(): void {
-    HeaderComponent.title = 'Overview';
-    if(!HeaderComponent.subtitle) {HeaderComponent.subtitle = 'new b0ss'}
-    HeaderComponent.backUrl = '/home';
+    this.headerSvc.title = 'Overview';
+    if(!this.headerSvc.subtitle) {this.headerSvc.subtitle = 'new b0ss'}
+    this.headerSvc.backUrl = '/home';
   }
 
   updateName(name: string) {
-    HeaderComponent.subtitle = name;
+    this.headerSvc.subtitle = name;
   }
 
 }

@@ -1,8 +1,8 @@
-<h1 *ngIf="getTitle() == ''" class="text-center">B0ss Bui1der</h1>
+<h1 *ngIf="headerSvc.title === ''" class="text-center">B0ss Bui1der</h1>
 <div class="row h-100 align-content-center">
-	<div *ngIf="getBackUrl() != ''" class="col-1 text-center">
+	<div *ngIf="headerSvc.backUrl != ''" class="col-1 text-center">
 		<a
-			[routerLink]="getBackUrl()"
+			[routerLink]="headerSvc.backUrl"
 			class="btn btn-dark rounded-0"
 			style="
 				background-color: rgba(0, 0, 0, 0.4);
@@ -14,12 +14,12 @@
 	<div class="col-3">
 		<h2
 			class="text-start"
-			[innerText]="getSubtitle()"
+			[innerText]="headerSvc.subtitle"
 			style="color: rgba(0, 0, 0, 0.4)"
 		></h2>
 	</div>
 	<div class="col-4">
-		<h2 class="text-center" [innerText]="getTitle()"></h2>
+		<h2 class="text-center" [innerText]="headerSvc.title"></h2>
 	</div>
 	<div class="col-4"></div>
 </div>

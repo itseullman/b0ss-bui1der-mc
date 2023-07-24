@@ -1,10 +1,12 @@
 import { AfterViewChecked, Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from './services/header.service';
 
 @Component({
   selector: 'b0b1-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [HeaderService]
 })
 export class AppComponent implements AfterViewChecked {
 

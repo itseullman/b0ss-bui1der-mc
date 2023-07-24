@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, Input} from '@angular/core';
-import { HeaderComponent } from '../common/header/header.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'b0b1-overview',

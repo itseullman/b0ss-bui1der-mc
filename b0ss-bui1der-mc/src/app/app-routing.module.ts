@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { OverviewComponent } from './overview/overview.component';
-import { MobComponent } from './mob/mob.component';
-import { MinionComponent } from './minion/minion.component';
-import { MinionsComponent } from './minions/minions.component';
-import { ArenaComponent } from './arena/arena.component';
-import { ExportComponent } from './export/export.component';
+import { HomeComponent } from './components/home/home.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { MobComponent } from './components/mob/mob.component';
+import { MinionComponent } from './components/minion/minion.component';
+import { MinionsComponent } from './components/minions/minions.component';
+import { ArenaComponent } from './components/arena/arena.component';
+import { ExportComponent } from './components/export/export.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },

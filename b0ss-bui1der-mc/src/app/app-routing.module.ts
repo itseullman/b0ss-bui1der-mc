@@ -11,12 +11,12 @@ import { ExportComponent } from './components/export/export.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'bossview', component: OverviewComponent},
-  { path: 'mob', component: MobComponent},
-  { path: 'minions', component: MinionsComponent},
-  { path: 'minion', component: MinionComponent},
-  { path: 'arena', component: ArenaComponent},
-  { path: 'export', component: ExportComponent},
+  { path: 'home/bossview', component: OverviewComponent},
+  { path: 'home/bossview/mob', component: MobComponent},
+  { path: 'home/bossview/minions', component: MinionsComponent},
+  { path: 'home/bossview/minions/:minName', component: MinionComponent},
+  { path: 'home/bossview/arena', component: ArenaComponent},
+  { path: 'home/bossview/export', component: ExportComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home'}
 ]

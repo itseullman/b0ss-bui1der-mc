@@ -16,8 +16,4 @@ export class OverviewComponent implements AfterViewChecked {
     this.headerSvc.backUrl = '/home';
   }
 
-  updateName(name: string) {
-    this.headerSvc.subtitle = name;
-  }
-
 }

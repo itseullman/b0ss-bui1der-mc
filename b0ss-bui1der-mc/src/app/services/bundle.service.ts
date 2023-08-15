@@ -5,7 +5,7 @@ import { Coordinate } from "../utilities/coordinate.model";
 @Injectable()
 export class BundleService {
 
-    private bundle: Bundle;
+    public bundle: Bundle;
 
     constructor() {
         this.bundle = {
@@ -20,7 +20,8 @@ export class BundleService {
             boss: {
                 name: '', 
                 tag: '',
-                summon: '',
+                type: '',
+                data: '',
                 abilities: []
             },
             lobby: {

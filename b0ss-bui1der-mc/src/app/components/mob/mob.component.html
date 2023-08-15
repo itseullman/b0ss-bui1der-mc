@@ -1,1 +1,50 @@
-<p>mob works!</p>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<a routerLink=".." class="btn btn-dark rounded-0">&lt;</a>
+			<form (ngSubmit)="onSubmit()" #f="ngForm">
+				<label for="name" class="form-label">Boss Name</label>
+				<input
+					class="form-control mb-4"
+					#name
+					type="text"
+					name="name"
+					[ngModel]="mob.name"
+					(change)="generateTag(name.value)"
+					placeholder="Boss display name..."
+				/>
+				<label for="tag" class="form-label">Boss Tag</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					name="tag"
+					[ngModel]="mob.tag"
+					placeholder="Unique identifier..."
+				/>
+				<label for="type" class="form-label">Mob Type</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					name="type"
+					[ngModel]="mob.type"
+					placeholder="Mob type for the boss..."
+				/>
+				<label for="data" class="form-label">Mob Data</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					name="data"
+					[ngModel]="mob.data"
+					placeholder="NBT data for boss mob..."
+				/>
+				<button
+					class="btn btn-primary"
+					type="submit"
+					[disabled]="!f.valid"
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

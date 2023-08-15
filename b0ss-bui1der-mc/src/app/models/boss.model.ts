@@ -4,7 +4,8 @@ export class Boss {
 
     constructor(public name: string, 
                 public tag: string, 
-                public summon: string,
+                public type: string,
+                public data: string,
                 public abilities: EntityAbility[]) {}
 
 }

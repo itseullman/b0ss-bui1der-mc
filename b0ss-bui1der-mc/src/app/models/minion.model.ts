@@ -5,7 +5,8 @@ export class Minion {
 
     constructor(public name: string,
                 public tag: string,
-                public summon: string,
+                public type: string,
+                public data: string,
                 public abilities: EntityAbility[],
                 public spawnMethod: string,
                 public spawnTimer: Tick,

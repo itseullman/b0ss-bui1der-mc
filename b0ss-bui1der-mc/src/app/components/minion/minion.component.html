@@ -1,1 +1,64 @@
-<p>minion works!</p>
+<div class="container" *ngIf="minion">
+	<div class="row">
+		<div class="col">
+			<form (ngSubmit)="onSubmit()" #f="ngForm">
+				<label for="name" class="form-label">Minion Name</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					id="name"
+					name="name"
+					[ngModel]="minion.name"
+					(change)="fillTag()"
+				/>
+				<label for="tag" class="form-label">Tag</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					id="tag"
+					name="tag"
+					[ngModel]="minion.tag"
+				/>
+				<label for="type" class="form-label">Mob Type</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					id="type"
+					name="type"
+					[ngModel]="minion.type"
+				/>
+				<label for="data" class="form-label">Mob Data</label>
+				<input
+					class="form-control mb-4"
+					type="text"
+					id="data"
+					name="data"
+					[ngModel]="minion.data"
+				/>
+				<label for="spawnTimer" class="form-label">Spawn Timer</label>
+				<input
+					class="form-control mb-4"
+					type="number"
+					id="spawnTimer"
+					name="spawnTimer"
+					[ngModel]="minion.spawnTimer.seconds"
+				/>
+				<label for="spawnCap" class="form-label">Spawn Cap</label>
+				<input
+					class="form-control mb-4"
+					type="number"
+					id="spawnCap"
+					name="spawnCap"
+					[ngModel]="minion.spawnCount"
+				/>
+				<button
+					class="btn btn-primary"
+					type="submit"
+					[disabled]="!f.valid"
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

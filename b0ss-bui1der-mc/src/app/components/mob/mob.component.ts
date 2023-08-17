@@ -35,7 +35,7 @@ export class MobComponent implements AfterViewChecked {
   generateTag(name: string) {
     if(name) {
       this.mobForm.form.patchValue({
-        tag: name[0].toLowerCase() + name.slice(1).replaceAll(RegExp('a|e|i|o|u|[^a-z]','gmi'),'')
+        tag: this.bundleSvc.createTag(name)
       });
     }
   }

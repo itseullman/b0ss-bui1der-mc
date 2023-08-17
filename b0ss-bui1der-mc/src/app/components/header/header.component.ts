@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
@@ -8,6 +9,10 @@ import { HeaderService } from 'src/app/services/header.service';
 })
 export class HeaderComponent {
 
-  constructor(public headerSvc: HeaderService) {}
+  constructor(private router: Router, private route: ActivatedRoute, public headerSvc: HeaderService) {}
   
+  navigateBack() {
+    this.router.navigate(['..'], {relativeTo: this.route});
+  }
+
 }

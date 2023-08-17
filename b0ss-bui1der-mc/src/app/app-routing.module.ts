@@ -13,8 +13,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/bossview', component: OverviewComponent},
   { path: 'home/bossview/mob', component: MobComponent},
-  { path: 'home/bossview/minions', component: MinionsComponent},
-  { path: 'home/bossview/minions/:minName', component: MinionComponent},
+  { path: 'home/bossview/minions', component: MinionsComponent, children: [
+    {path: ':name', component: MinionComponent}
+  ]},
   { path: 'home/bossview/arena', component: ArenaComponent},
   { path: 'home/bossview/export', component: ExportComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },

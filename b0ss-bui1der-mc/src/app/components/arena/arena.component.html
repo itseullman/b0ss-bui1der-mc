@@ -1,0 +1,84 @@
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<a routerLink=".." class="btn btn-dark rounded-0">&lt;</a>
+			<form (ngSubmit)="onSubmit()" #f="ngForm">
+				<label for="center-x center-y center-z" class="form-label">
+					Arena Center (X, Y, Z):
+				</label>
+				<div>
+					<input
+						type="number"
+						name="center-x"
+						[ngModel]="arena.center.x"
+					/>
+					<input
+						type="number"
+						name="center-y"
+						[ngModel]="arena.center.y"
+					/>
+					<input
+						type="number"
+						name="center-z"
+						[ngModel]="arena.center.z"
+					/>
+				</div>
+				<label for="radius">Radius:</label>
+				<div>
+					<input
+						type="number"
+						name="radius"
+						[ngModel]="arena.radius"
+					/>
+				</div>
+				<label for="entry-point-x entry-point-y entry-point-z"
+					>Entry Point (X, Y, Z)</label
+				>
+				<div>
+					<input
+						type="number"
+						name="entry-point-x"
+						ngModel="entry-point-x"
+					/>
+					<input
+						type="number"
+						name="entry-point-y"
+						ngModel="entry-point-y"
+					/>
+					<input
+						type="number"
+						name="entry-point-z"
+						ngModel="entry-point-z"
+					/>
+				</div>
+				<label for="exit-point-x exit-point-y exit-point-z"
+					>Exit Point (X, Y, Z)</label
+				>
+				<div>
+					<input
+						type="number"
+						name="exit-point-x"
+						ngModel="exit-point-x"
+					/>
+					<input
+						type="number"
+						name="exit-point-y"
+						ngModel="exit-point-y"
+					/>
+					<input
+						type="number"
+						name="exit-point-z"
+						ngModel="exit-point-z"
+					/>
+				</div>
+				<button
+					class="btn btn-primary"
+					type="submit"
+					[disabled]="!f.valid"
+				>
+					Submit
+				</button>
+			</form>
+		</div>
+	</div>
+</div>

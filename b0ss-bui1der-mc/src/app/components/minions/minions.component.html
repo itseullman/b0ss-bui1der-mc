@@ -1,0 +1,24 @@
+<a routerLink=".." class="btn btn-dark rounded-0">&lt;</a>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<button (click)="addMinion()" class="btn btn-success">
+				Add Minion
+			</button>
+			<div *ngFor="let min of minions">
+				<button [routerLink]="min.name">
+					{{ min.name }}
+					<button
+						class="btn btn-danger"
+						(click)="deleteMinion(min.name)"
+					>
+						Delete
+					</button>
+				</button>
+			</div>
+		</div>
+		<div class="col">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+</div>

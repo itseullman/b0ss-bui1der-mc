@@ -1,0 +1,25 @@
+<h1 *ngIf="headerSvc.title === ''" class="text-center">B0ss Bui1der</h1>
+<div class="row h-100 align-content-center">
+	<div *ngIf="headerSvc.backUrl" class="col-1 text-center">
+		<a
+			(click)="navigateBack()"
+			class="btn btn-dark rounded-0"
+			style="
+				background-color: rgba(0, 0, 0, 0.4);
+				border-color: rgba(0, 0, 0, 0.6);
+			"
+			>&lt;</a
+		>
+	</div>
+	<div class="col-3">
+		<h2
+			class="text-start"
+			[innerText]="headerSvc.subtitle"
+			style="color: rgba(0, 0, 0, 0.4)"
+		></h2>
+	</div>
+	<div class="col-4">
+		<h2 class="text-center" [innerText]="headerSvc.title"></h2>
+	</div>
+	<div class="col-4"></div>
+</div>

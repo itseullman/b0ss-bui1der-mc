@@ -1,5 +1,5 @@
 # debug info for admins
-# info-admin
+# admin-info
 # Author: Noob/iTyro
 # Created: 02-24-20
 # Updated: 08-09-23

@@ -5,7 +5,6 @@
 # Updated: 08-09-23
 
 # Variables Used Here:
-# --BTAG--
 
 ### Commands ###
 ################

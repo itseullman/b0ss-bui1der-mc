@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, Input} from '@angular/core';
+import { AfterViewChecked, Component} from '@angular/core';
 import { BundleService } from 'src/app/services/bundle.service';
 import { HeaderService } from 'src/app/services/header.service';
 
@@ -15,6 +15,10 @@ export class OverviewComponent implements AfterViewChecked {
     this.headerSvc.title = 'Overview';
     this.headerSvc.subtitle = this.bundleSvc.bundle.boss.name ? this.bundleSvc.bundle.boss.name : 'new b0ss';
     this.headerSvc.backUrl = '/home';
+  }
+
+  beginExport() {
+    this.bundleSvc.export();
   }
 
 }

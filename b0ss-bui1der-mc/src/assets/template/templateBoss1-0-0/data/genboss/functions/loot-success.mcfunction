@@ -2,11 +2,13 @@
 # loot-success
 # Author: Noob/iTyro
 # Created 10-09-18
-# Updated 08-09-23
+# Updated 08-31-23
 
 # Variables Used Here:
 # --BNAME--
 # --BTAG--
+# --XTAG--
+# --ABIL-X--
 # --ARENA-RADIUS--
 # --LOOT-XP-LEVELS--
 # --LOOT-BOX--
@@ -20,6 +22,6 @@ execute if score --BTAG--lootTimer --BTAG--lootTimer matches 5 if entity @a[team
 execute if score --BTAG--lootTimer --BTAG--lootTimer matches 5 run xp add @a[team=--BTAG--fight,distance=..--ARENA-RADIUS--] --LOOT-XP-LEVELS-- levels
 execute if score --BTAG--lootTimer --BTAG--lootTimer matches 5 run give @a[team=--BTAG--fight,distance=..--ARENA-RADIUS--] --LOOT-BOX-- 1
 
-scoreboard objectives remove --XTAG-ABIL-X--
+scoreboard objectives remove --ABIL-X--
 scoreboard objectives remove --XTAG--spawnTimer
 ################

@@ -15,6 +15,7 @@ import { MinionComponent } from './components/minion/minion.component';
 import { ArenaComponent } from './components/arena/arena.component';
 import { ExportComponent } from './components/export/export.component';
 import { DetailsComponent } from './components/overview/details/details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DetailsComponent } from './components/overview/details/details.componen
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

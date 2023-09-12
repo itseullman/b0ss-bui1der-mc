@@ -31,7 +31,7 @@ export class MinionComponent implements OnInit {
     this.minion.type = this.minionForm.value.type;
     this.minion.data = this.minionForm.value.data;
     this.minion.spawnTimer.seconds = this.minionForm.value.spawnTimer;
-    this.minion.spawnCount = this.minionForm.value.spawnCount;
+    this.minion.spawnCount = this.minionForm.value.spawnCap;
     this.router.navigate(['..', this.minion.name], {relativeTo: this.route});
   }
 

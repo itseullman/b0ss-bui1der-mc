@@ -1,0 +1,64 @@
+{
+    "folders": {
+        "advancements": {
+            "folders": {},
+            "files": []
+        },
+        "functions": {
+            "folders": {
+                "additional": {
+                    "folders": {},
+                    "files":[
+                        "admin-info.mcfunction",
+                        "admin-stop.mcfunction",
+                        "gameloop.mcfunction",
+                        "gift-event.mcfunction",
+                        "info-player.mcfunction",
+                        "rain-off.mcfunction",
+                        "rain-on.mcfunction",
+                        "test-contract.mcfunction",
+                        "test-equip.mcfunction"
+                    ]
+                }
+            },
+            "files": [
+                "abilities-off.mcfunction",
+                "abilities-on.mcfunction",
+                "abilities-switch.mcfunction",
+                "bb-off.mcfunction",
+                "bb-on.mcfunction",
+                "bb-switch.mcfunction",
+                "core.mcfunction",
+                "effects-off.mcfunction",
+                "effects-on.mcfunction",
+                "effects-switch.mcfunction",
+                "enter-arena.mcfunction",
+                "initialize.mcfunction",
+                "loot-fail.mcfunction",
+                "loot-success.mcfunction",
+                "loot-switch.mcfunction",
+                "spawncap-off.mcfunction",
+                "spawncap-on.mcfunction",
+                "spawncap-switch.mcfunction",
+                "su-fail.mcfunction",
+                "su-success.mcfunction",
+                "su-switch.mcfunction",
+                "summons-off.mcfunction",
+                "summons-on.mcfunction",
+                "summons-switch.mcfunction"
+            ]
+        },
+        "loot_tables": {
+            "folders": {},
+            "files": []
+        },
+        "predicates": {
+            "folders": {},
+            "files": []
+        }
+    },
+    "files":[
+        "filelist.json",
+        "pack.mcmeta"
+    ]
+}

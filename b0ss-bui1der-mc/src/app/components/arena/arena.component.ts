@@ -31,6 +31,9 @@ export class ArenaComponent implements AfterViewChecked {
         'entry-point-z':this.arena.entryPoints[0].z
       });
     }
+    else {
+      this.arena.entryPoints.push(new Coordinate());
+    }
 
     if(this.arena.exitPoints[0]) {
       this.arenaForm.form.patchValue({
@@ -38,6 +41,9 @@ export class ArenaComponent implements AfterViewChecked {
         'exit-point-y':this.arena.exitPoints[0].y, 
         'exit-point-z':this.arena.exitPoints[0].z
       });
+    }
+    else {
+      this.arena.exitPoints.push(new Coordinate());
     }
   }
 
@@ -48,12 +54,10 @@ export class ArenaComponent implements AfterViewChecked {
 
     this.arena.radius = this.arenaForm.value['radius'];
 
-    this.arena.entryPoints.push(new Coordinate());
     this.arena.entryPoints[0].x = this.arenaForm.value['entry-point-x'];
     this.arena.entryPoints[0].y = this.arenaForm.value['entry-point-y'];
     this.arena.entryPoints[0].z = this.arenaForm.value['entry-point-z'];
 
-    this.arena.exitPoints.push(new Coordinate());
     this.arena.exitPoints[0].x = this.arenaForm.value['exit-point-x'];
     this.arena.exitPoints[0].y = this.arenaForm.value['exit-point-y'];
     this.arena.exitPoints[0].z = this.arenaForm.value['exit-point-z'];

@@ -17,5 +17,5 @@ scoreboard players add --BTAG----ABIL-X--timer --BTAG----ABIL-X--timer 1
 ###########
 execute if score --BTAG----ABIL-X--timer --BTAG----ABIL-X--timer matches --ABIL-X-TIMER-- run scoreboard players set --BTAG----ABIL-X--timer --BTAG----ABIL-X--timer 0
 # loot-success needs /scoreboard objectives remove --ABIL-X--
-#######################
+##################
 ################

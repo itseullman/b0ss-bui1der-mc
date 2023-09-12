@@ -4,6 +4,7 @@ import { Bundle } from "../models/bundle.model";
 import { Coordinate } from "../utilities/coordinate.model";
 import { Minion } from "../models/minion.model";
 import { Tick } from "../utilities/tick.model";
+import * as JSZip from "jszip";
 
 @Injectable()
 export class BundleService {
@@ -42,9 +43,6 @@ export class BundleService {
         }
     }
 
-    /**
-     * outputBundle
-     */
     public outputBundle() {
         console.log(JSON.stringify(this.bundle));
     }
@@ -99,27 +97,83 @@ export class BundleService {
     export() {
         const templateDir = 'assets/template/templateBoss1-0-0/';
         const dataDir = templateDir + 'data/genboss/';
+        const zip = new JSZip();
+
         this.httpClient.get(templateDir + 'filelist.json').subscribe((data: any) => {
             const root: FileList = data;
             const mcfuncFiles = this.listFiles(root, 'functions');
 
-            for(let mcfunc of mcfuncFiles) {
-                this.formatAndDownloadMcfunc(dataDir + 'functions/' + mcfunc);
-            }
+            for(let mcfuncFile of mcfuncFiles) {
+                this.httpClient.get(dataDir + 'functions/' + mcfuncFile, {responseType: 'text'}).subscribe(text => {
+                    text = this.formatMcfunctionText(text);
+                    zip.file(this.bundle.boss.tag + '/data/functions/' + mcfuncFile, text);
 
-            // this.httpClient.get(dataDir + 'functions/' + mcfuncFiles[0], {responseType: 'text'}).subscribe(text => {
-            //     let file = new File([text],'test.txt',{type: 'application/octet-stream'});
-            //     window.open(window.URL.createObjectURL(file));
-            // });
+                    if(mcfuncFile === mcfuncFiles[mcfuncFiles.length-1]) {
+                        zip.generateAsync({type:'blob'}).then(content => {
+                            const objURL = window.URL.createObjectURL(new File([content], 'b0b1' + this.bundle.boss.tag, {type: 'application/zip'}));
+                            window.open(objURL);
+                            window.URL.revokeObjectURL(objURL);
+                        });
+                    }
+                });
+            }
         });
     }
 
-    formatAndDownloadMcfunc(path: string) {
-        this.httpClient.get(path, {responseType: 'text'}).subscribe(data => {
-            const text = data;
+    formatMcfunctionText(text: string): string {
+        text = this.formatXVariables(text);
+        text = this.formatBaseVariables(text);
 
-            text.replace(RegExp('--(.+?)--','gmi'), substr => { 
+        return text;
+    }
+
+    formatXVariables(text: string): string {
+        let result = '';
+        let template = '';
+        let copy = false;
+
+        for(let line of text.split('\n')) {
+            if(line.includes('### --XTAG-- ###')) {
+                copy = true;
+            }
+            if(copy) {
+                template += line + '\n';
+            }
+            if(line.includes('################')) {
+                copy = false;
+            }
+        }
+
+        for(let min of this.bundle.minions) {
+            result += template;
+            result = result.replace(RegExp('--(.+?)--','gmi'), substr => {
                 console.log(substr);
+                switch (substr) {
+                    case '--XTAG--':
+                        return min.tag;
+                    case '--XTAG-MOB--':
+                        return min.type;
+                    case '--XTAG-DATA--':
+                        return min.data;
+                    case '--XTAG-SPAWN-TIMER--':
+                        return min.spawnTimer.ticks.toString();
+                    case '--XTAG-SPAWN-CAP--':
+                        return min.spawnCount.toString();
+                    default:
+                        return substr;
+                }
+            });
+        }
+
+        console.log(result);
+        text = text.replace(RegExp('### --XTAG-- ###.+?#{16}','gms'), result);
+        console.log(text);
+        return text.replace(RegExp('###\s--XTAG--\s###.+?#{16}','gms'), result);
+    }
+
+    formatBaseVariables(text: string): string {
+
+        text = text.replace(RegExp('--(.+?)--','gmi'), substr => {
                 switch (substr) {
                     case '--BNAME--':
                         return this.bundle.boss.name;
@@ -134,15 +188,35 @@ export class BundleService {
                     case '--LOOT-XP-LEVELS--':
                         return substr;
                     case '--XTAG--':
-                        return substr;
+                        substr = ''
+                        for(let min of this.bundle.minions) {
+                            substr += min.tag + ',';
+                        }
+                        return substr.slice(0, -1);
                     case '--XTAG-MOB--':
-                        return substr;
+                        substr = ''
+                        for(let min of this.bundle.minions) {
+                            substr += min.type + ',';
+                        }
+                        return substr.slice(0, -1);
                     case '--XTAG-DATA--':
-                        return substr;
+                        substr = ''
+                        for(let min of this.bundle.minions) {
+                            substr += min.data + ',';
+                        }
+                        return substr.slice(0, -1);
                     case '--XTAG-SPAWN-TIMER--':
-                        return substr;
+                        substr = ''
+                        for(let min of this.bundle.minions) {
+                            substr += min.spawnTimer + ',';
+                        }
+                        return substr.slice(0, -1);
                     case '--XTAG-SPAWN-CAP--':
-                        return substr;
+                        substr = ''
+                        for(let min of this.bundle.minions) {
+                            substr += min.spawnCount + ',';
+                        }
+                        return substr.slice(0, -1);
                     case '--ABIL-X--':
                         return substr;
                     case '--ABIL-X-TIMER--':
@@ -198,10 +272,7 @@ export class BundleService {
                 }
             });
 
-            // const name = path.split('/')[path.split('/').length - 1];
-            // let file = new File([text], name, { type: 'application/octet-stream' });
-            // window.open(window.URL.createObjectURL(file));
-        });
+        return text;
     }
 
     listFiles(root: FileList, path: string): string[] {

@@ -10,7 +10,7 @@
 
 ### Commands ###
 team add --BTAG--fight
-scoreboard objectives add --BTAG--LootTimer dummy
+scoreboard objectives add --BTAG--lootTimer dummy
 bossbar add --BTAG-- [{"text":"["},{"text":"--BNAME--","color":"dark_purple","bold":true},{"text":" ]","color":"white","bold":false}]
 bossbar set --BTAG-- max 1000
 bossbar set --BTAG-- style notched_6

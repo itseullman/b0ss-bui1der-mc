@@ -20,6 +20,8 @@ tellraw @a {"text":"[ ","color":"white","bold":true,"extra":[{"text":"B0ss Batt1
 summon --BTAG-MOB-- --ARENA-CENTER-X-- --ARENA-CENTER-Y-- --ARENA-CENTER-Z-- --BTAG-DATA--
 playsound minecraft:entity.wither.death master @a[team=--BTAG--fight] ~ ~ ~ 100 0
 
-scoreboard objectives add --ABIL-X-- dummy
+#scoreboard objectives add --ABIL-X-- dummy
+### --XTAG-- ###
 scoreboard objectives add --XTAG--spawnTimer dummy
+################S
 ################

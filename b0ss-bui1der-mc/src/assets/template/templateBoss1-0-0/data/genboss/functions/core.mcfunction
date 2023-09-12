@@ -10,7 +10,7 @@
 ### Functions ###
 function --BTAG--:bb-switch
 # function --BTAG--:abilities-switch
-# function --BTAG--:effects-switch
+function --BTAG--:effects-switch
 function --BTAG--:summons-switch
 # function --BTAG--:loot-switch
 function --BTAG--:spawncap-switch

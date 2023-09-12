@@ -16,6 +16,7 @@ Created by Elliott Ullman
 
 ### LOG 0:
 
+> - **09-12-2023** : Slight break from Angular training for AWS. Imported and refinied boss template files. Added basic variable replace and zip file download. Returning to learn and implement NGRX.
 > - **08-24-2023** : More Angular training complete on Forms, Routing, Http, etc. Very base input forms created for boss mob, minions, and the arena. Ignoring styling for now.
 > - **06-21-2023** : 10+ hours into Angular training, mocked out UI and created home UI. Ignoring Electron at the moment. Picked up some RxJS.
 > - **04-04-2023** : Project started. Using Angular + Electron, RxJS needed.
